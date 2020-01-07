@@ -20,7 +20,7 @@
 			<th>내용</th>
 			<th>날짜</th>
 		</tr>
-	    <?  $comment_table = "SELECT users.id, comment.users_id, users.account, comment.comment, comment.created_at as comment_created_at, users.created_at as user_created_at FROM comment join users on users.id = comment.users_id";
+	    <?  $comment_table = "SELECT users.id, comment.users_id, users.account, comment.comment, comment.created_at as comment_created_at, users.created_at as user_created_at FROM comment join users on users.id = comment.users_id ORDER BY comment_created_at DESC";
         $comment_result = mysqli_query($conn, $comment_table);
         $i = 0;
         while ($i <= $row = mysqli_fetch_array($comment_result)){ $i++; ?>
